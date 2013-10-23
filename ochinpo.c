@@ -7,24 +7,13 @@ int main (int argc, char *argv[]) {
   int rnd = 0;
   int cnt = 0;
   int complete = 0;
+  char *str[4] = {"お", "ち", "ん", "ぽ"};
 
-  while (1) {
+  while (complete < 4) { // if complete==4, ochinpo is collect!
     cnt++;
     rnd = rand()%4;
-    if (rnd == 0)
-      printf("お");
-    else if (rnd == 1)
-      printf("ち");
-    else if (rnd == 2)
-      printf("ん");
-    else // rnd == 3
-      printf("ぽ");
-
+    printf("%s", str[rnd]);
     complete = (rnd == complete)? ++complete : 0;
-
-    // if complete==4, ochinpo is complete!
-    if (complete == 4)
-      break;
   }
 
   printf("\n");
